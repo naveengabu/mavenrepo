@@ -1,31 +1,57 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-  <groupId>com.jdevs</groupId>
-  <artifactId>studentapp</artifactId>
-  <version>2.1.1-FEAT01-SNAPSHOT</version>
-  <packaging>war</packaging>
-  <build>
-    <sourceDirectory>src</sourceDirectory>
-    <plugins>
-      <plugin>
-        <artifactId>maven-compiler-plugin</artifactId>
-        <version>2.6</version>
-        <configuration>
-          <source>1.8</source>
-          <target>1.8</target>
-        </configuration>
-      </plugin>
-      <plugin>
-        <artifactId>maven-war-plugin</artifactId>
-        <version>3.0.5</version>
-        <configuration>
-          <warSourceDirectory>WebContent</warSourceDirectory>
-          <failOnMissingWebXml>false</failOnMissingWebXml>
-        </configuration>
-      </plugin>
-    </plugins>
-  </build>
-   <distributionManagement>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 
+                             http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+  
+    <groupId>com.jdevs</groupId>
+    <artifactId>studentapp</artifactId>
+    <version>2.1.1-FEAT01-SNAPSHOT</version>
+    <packaging>war</packaging>
+  
+    <properties>
+        <!-- Define Java version for compiler -->
+        <java.version>1.8</java.version>
+    </properties>
+  
+    <dependencies>
+        <!-- Servlet API dependency -->
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>javax.servlet-api</artifactId>
+            <version>4.0.1</version> <!-- Use a newer version if available -->
+            <scope>provided</scope> <!-- Servlet API is provided by the servlet container -->
+        </dependency>
+    </dependencies>
+  
+    <build>
+        <sourceDirectory>src</sourceDirectory>
+        <plugins>
+            <!-- Maven Compiler Plugin -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.8.1</version> <!-- Latest version as of my knowledge cutoff date -->
+                <configuration>
+                    <source>${java.version}</source>
+                    <target>${java.version}</target>
+                </configuration>
+            </plugin>
+  
+            <!-- Maven War Plugin -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-war-plugin</artifactId>
+                <version>3.2.2</version> <!-- Latest version as of my knowledge cutoff date -->
+                <configuration>
+                    <warSourceDirectory>WebContent</warSourceDirectory>
+                    <failOnMissingWebXml>false</failOnMissingWebXml>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+    <distributionManagement>
         <repository>
             <id>deployment</id>
             <name>Internal Releases</name>
@@ -37,11 +63,4 @@
             <url>http://3.108.234.126:8081/nexus/content/repositories/snapshots/</url>
         </snapshotRepository>
     </distributionManagement>
-  <dependencies>
-  	<dependency>
-  		<groupId>javax.servlet</groupId>
-  		<artifactId>javax.servlet-api</artifactId>
-  		<version>3.0.1</version>
-  	</dependency>
-  </dependencies>
 </project>

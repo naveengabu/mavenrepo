@@ -13,7 +13,7 @@
         <!-- Define Java version for compiler -->
         <java.version>1.8</java.version>
         <!-- Latest version of SonarQube Maven plugin -->
-        <sonar.maven.plugin.version>3.10.0.2594</sonar.maven.plugin.version>
+        <sonar.maven.plugin.version>3.10.4</sonar.maven.plugin.version>
     </properties>
   
     <dependencies>

@@ -14,6 +14,8 @@
         <java.version>1.8</java.version>
         <!-- Latest version of SonarQube Maven plugin -->
         <sonar.maven.plugin.version>3.2</sonar.maven.plugin.version>
+        <!-- Specify SonarQube server URL -->
+        <sonar.host.url>http://54.179.190.105:9000</sonar.host.url>
     </properties>
   
     <dependencies>
@@ -56,6 +58,10 @@
                 <groupId>org.sonarsource.scanner.maven</groupId>
                 <artifactId>sonar-maven-plugin</artifactId>
                 <version>${sonar.maven.plugin.version}</version>
+                <configuration>
+                    <!-- Configure SonarQube server URL -->
+                    <sonar.host.url>${sonar.host.url}</sonar.host.url>
+                </configuration>
             </plugin>
         </plugins>
     </build>

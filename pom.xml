@@ -13,7 +13,7 @@
         <!-- Define Java version for compiler -->
         <java.version>1.8</java.version>
         <!-- Latest version of SonarQube Maven plugin -->
-        <sonar.maven.plugin.version>3.2</sonar.maven.plugin.version>
+        <sonar.maven.plugin.version>2.8</sonar.maven.plugin.version>
         <!-- Specify SonarQube server URL -->
         <sonar.host.url>http://54.179.190.105:9000</sonar.host.url>
     </properties>
